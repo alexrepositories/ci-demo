@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm" # 👈 Game-changing speed boost
+          cache: "npm" # 👈 speed boost
 
       - name: Cache npm modules
         uses: actions/cache@v3
@@ -26,5 +26,5 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline
 
-      - name: Run tests
+      - name: Run test
         run: npm test
